@@ -39,8 +39,6 @@ public class JwtUtils {
             UserDetails userDetails,
             long expiration
     ) {
-        System.out.println("Now: "+new Date(System.currentTimeMillis()));
-        System.out.println("Exp: "+new Date(System.currentTimeMillis()+expiration));
         return Jwts
                 .builder()
                 .setClaims(extraClaims)

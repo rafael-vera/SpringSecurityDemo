@@ -23,7 +23,13 @@ public class Controller {
         if (!this.userService.createUser(signupRequest)) {
             return ResponseEntity.internalServerError().body("The user can not be created.");
         }
-        return ResponseEntity.ok("Created new user");
+        return ResponseEntity.ok("Created new user.");
+    }
+
+    @GetMapping("/public/verify")
+    public ResponseEntity<?> verifyAccount(@RequestParam String token) {
+        this.userService.verifyAccount(token);
+        return ResponseEntity.ok("Account verified, now you can login.");
     }
 
     @GetMapping("/private/user")

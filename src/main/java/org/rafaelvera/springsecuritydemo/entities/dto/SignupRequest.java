@@ -6,7 +6,7 @@ import org.hibernate.validator.constraints.Length;
 
 public record SignupRequest(
         @NotBlank
-        @Length(max = 25)
+        @Length(max = 100)
         String username,
 
         @NotBlank

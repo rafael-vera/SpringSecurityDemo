@@ -21,7 +21,7 @@ public class UserEntity {
     @Column(name = "user_id")
     private long id;
 
-    @Column(name = "username", nullable = false, length = 25, unique = true)
+    @Column(name = "username", nullable = false, length = 100, unique = true)
     private String username;
 
     @Column(nullable = false)
@@ -34,7 +34,7 @@ public class UserEntity {
     @Column(nullable = false, columnDefinition = "bit(1) default 0")
     private boolean locked;
 
-    @Column(nullable = false, columnDefinition = "bit(1) default 1")
+    @Column(nullable = false, columnDefinition = "bit(1) default 0")
     private boolean enable;
 
     @OneToMany(mappedBy = "user")
